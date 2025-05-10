@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#hero" className="text-xl font-bold transition-colors hover:text-primary">
-          Portfolio
+          PORTFOLIO
         </Link>
 
         {/* Desktop Navigation */}

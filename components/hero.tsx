@@ -39,7 +39,7 @@ export default function Hero() {
             className="mb-6 inline-block rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 px-6 py-2 backdrop-blur-sm"
           >
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Full-Stack Developer & Designer
+              Full-Stack & Blockchain Developer
             </span>
           </motion.div>
 
@@ -65,8 +65,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
           >
-            I build modern, interactive websites and applications with cutting-edge technologies and distinctive
-            designs.
+            I build modern, interactive fullstack applications with cutting-edge web technologies, distinctive designs, and robust blockchain integrations.
           </motion.p>
 
           <motion.div

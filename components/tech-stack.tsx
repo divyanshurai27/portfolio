@@ -1,99 +1,110 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import Image from "next/image"
 
-// Technology data with icons only
+// Technology data with SVG paths from public folder
 const technologies = [
   // Frontend
-  { id: "html", name: "HTML", color: "#E34F26" },
-  { id: "css", name: "CSS", color: "#1572B6" },
-  { id: "javascript", name: "JavaScript", color: "#F7DF1E" },
-  { id: "typescript", name: "TypeScript", color: "#3178C6" },
-  { id: "react", name: "React", color: "#61DAFB" },
-  { id: "nextjs", name: "Next.js", color: "#000000" },
-  { id: "tailwind", name: "Tailwind CSS", color: "#06B6D4" },
-  { id: "vue", name: "Vue.js", color: "#4FC08D" },
+  { id: "html", name: "HTML", color: "#E34F26", icon: "/icons/HTML5.svg" },
+  { id: "css", name: "CSS", color: "#1572B6", icon: "/icons/CSS3.svg" },
+  { id: "javascript", name: "JavaScript", color: "#F7DF1E", icon: "/icons/javascript.svg" },
+  { id: "typescript", name: "TypeScript", color: "#3178C6", icon: "/icons/typescript.svg" },
+  { id: "react", name: "React", color: "#61DAFB", icon: "/icons/react.svg" },
+  { id: "nextjs", name: "Next.js", color: "#000000", icon: "/icons/nextjs.svg" },
+  { id: "tailwind", name: "Tailwind CSS", color: "#06B6D4", icon: "/icons/tailwind.svg" },
   
   // Backend
-  { id: "nodejs", name: "Node.js", color: "#339933" },
-  { id: "express", name: "Express", color: "#000000" },
-  { id: "python", name: "Python", color: "#3776AB" },
-  { id: "django", name: "Django", color: "#092E20" },
-  { id: "mongodb", name: "MongoDB", color: "#47A248" },
-  { id: "postgresql", name: "PostgreSQL", color: "#4169E1" },
-  { id: "graphql", name: "GraphQL", color: "#E10098" },
+  { id: "nodejs", name: "Node.js", color: "#339933", icon: "/icons/nodejs.svg" },
+  { id: "express", name: "Express", color: "#000000", icon: "/icons/express.svg" },
+  { id: "python", name: "Python", color: "#3776AB", icon: "/icons/python.svg" },
+  { id: "mongodb", name: "MongoDB", color: "#47A248", icon: "/icons/mongodb.svg" },
+  { id: "postgresql", name: "PostgreSQL", color: "#4169E1", icon: "/icons/postgresql.svg" },
   
   // Tools & Others
-  { id: "git", name: "Git", color: "#F05032" },
-  { id: "docker", name: "Docker", color: "#2496ED" },
-  { id: "figma", name: "Figma", color: "#F24E1E" },
-  { id: "aws", name: "AWS", color: "#FF9900" },
-  { id: "firebase", name: "Firebase", color: "#FFCA28" },
+  { id: "git", name: "Git", color: "#F05032", icon: "/icons/git.svg" },
+  { id: "figma", name: "Figma", color: "#F24E1E", icon: "/icons/canva.svg" },
 ]
 
 export default function TechStackCarousel() {
-  const containerRef = useRef(null)
-  const [duplicatedTech, setDuplicatedTech] = useState([])
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [duplicatedTech, setDuplicatedTech] = useState<typeof technologies>([])
   const scrollSpeed = 35 // Lower number = faster scroll
-
+  
   // Duplicate the technologies array to create an infinite scroll effect
   useEffect(() => {
-    // Duplicate the array to ensure smooth infinite scroll
     setDuplicatedTech([...technologies, ...technologies])
   }, [])
-
-  // Auto-scrolling animation
+  
+  // Auto-scrolling animation with optimized requestAnimationFrame usage
   useEffect(() => {
     const container = containerRef.current
     if (!container || duplicatedTech.length === 0) return
-
+    
     let animationFrameId
     let startTime
     let currentPosition = 0
+    let isPaused = false
+    
+    interface AnimateParams {
+      timestamp: number;
+    }
 
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp
-      const elapsed = timestamp - startTime
-      
-      // Calculate new position
-      currentPosition = (elapsed / scrollSpeed) % (container.scrollWidth / 2)
-      
-      // Apply the scroll position
-      container.scrollLeft = currentPosition
-      
-      // If we've scrolled through the first set of items, jump back to start
-      if (currentPosition >= container.scrollWidth / 2) {
-        startTime = timestamp
-        currentPosition = 0
-        container.scrollLeft = 0
+    interface AnimationState {
+      animationFrameId: number;
+      startTime: number | null;
+      currentPosition: number;
+      isPaused: boolean;
+    }
+
+    const animate = (timestamp: AnimateParams["timestamp"]): void => {
+      if (isPaused) {
+      animationFrameId = requestAnimationFrame(animate);
+      return;
       }
       
-      animationFrameId = requestAnimationFrame(animate)
-    }
+      if (!startTime) startTime = timestamp;
+      const elapsed: number = timestamp - startTime;
+      
+      // Calculate new position
+      const newPosition: number = (elapsed / scrollSpeed) % (container!.scrollWidth / 2);
+      currentPosition = (elapsed / scrollSpeed) % (container!.scrollWidth / 2);
+      
+      // Apply the scroll position
+      container!.scrollLeft = currentPosition;
+      
+      // If we've scrolled through the first set of items, reset
+      if (currentPosition >= container!.scrollWidth / 2) {
+      startTime = timestamp;
+      currentPosition = 0;
+      container!.scrollLeft = 0;
+      }
+      
+      animationFrameId = requestAnimationFrame(animate);
+    };
     
+    // Start animation
     animationFrameId = requestAnimationFrame(animate)
     
-    // Pause animation on hover
-    const handleMouseEnter = () => {
-      cancelAnimationFrame(animationFrameId)
-    }
-    
-    const handleMouseLeave = () => {
+    // Pause animation on hover or when not visible
+    const handleMouseEnter = () => { isPaused = true }
+    const handleMouseLeave = () => { 
+      isPaused = false
       startTime = null
-      animationFrameId = requestAnimationFrame(animate)
     }
     
+    // Add event listeners
     container.addEventListener('mouseenter', handleMouseEnter)
     container.addEventListener('mouseleave', handleMouseLeave)
     
+    // Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId)
       container.removeEventListener('mouseenter', handleMouseEnter)
       container.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [duplicatedTech])
-
+  }, [duplicatedTech, scrollSpeed])
+  
   return (
     <section id="tech" className="relative py-16 md:py-24">
       {/* Background effects */}
@@ -110,13 +121,13 @@ export default function TechStackCarousel() {
               TECH STACK
             </span>
           </div>
-          <h2 className="mb-4 font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">My Tools & Technologies</h2>
+          <h2 className="mb-4 font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            My Tools & Technologies
+          </h2>
         </div>
 
         {/* Carousel container */}
-        <div 
-          className="relative mx-auto w-full overflow-hidden rounded-xl border border-foreground/10 bg-background/50 p-8 backdrop-blur-sm"
-        >
+        <div className="relative mx-auto w-full overflow-hidden rounded-xl border border-foreground/10 bg-background/50 p-8 backdrop-blur-sm">
           {/* Main scrolling container */}
           <div 
             ref={containerRef}
@@ -128,35 +139,30 @@ export default function TechStackCarousel() {
                 key={`${tech.id}-${index}`} 
                 className="flex-shrink-0"
               >
-                <motion.div
-                  whileHover={{ 
-                    y: -8, 
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
-                  }}
-                  className="group relative"
+                <div 
+                  className="group relative hover:-translate-y-2 hover:scale-105 transition-all duration-300"
                 >
                   {/* Icon container */}
                   <div 
                     className="flex h-20 w-20 items-center justify-center rounded-xl bg-background p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl dark:bg-foreground/5 md:h-24 md:w-24"
                     style={{ 
-                      boxShadow: `0 8px 30px rgba(${hexToRgb(tech.color)}, 0.1)` 
+                      boxShadow: `0 8px 30px ${hexToRgba(tech.color, 0.1)}` 
                     }}
                   >
-                    {/* Placeholder for SVG icon - using text for demo */}
+                    {/* SVG icon from public folder */}
                     <div 
                       className="flex aspect-square w-full items-center justify-center rounded-md transition-all duration-300"
                       style={{ 
-                        background: `linear-gradient(135deg, ${tech.color}33, ${tech.color}11)` 
+                        background: `linear-gradient(135deg, ${hexToRgba(tech.color, 0.2)}, ${hexToRgba(tech.color, 0.05)})` 
                       }}
                     >
-                      <span 
-                        className="select-none text-2xl font-bold"
-                        style={{ color: tech.color }}
-                      >
-                        {tech.name.charAt(0)}
-                        {tech.name.includes('.') ? tech.name.charAt(tech.name.indexOf('.') + 1) : tech.name.charAt(1)}
-                      </span>
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        width={40}
+                        height={40}
+                        className="h-30 w-30 object-contain"
+                      />
                     </div>
                   </div>
                   
@@ -170,7 +176,7 @@ export default function TechStackCarousel() {
                     className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full opacity-50 transition-all duration-300 group-hover:opacity-100"
                     style={{ backgroundColor: tech.color }}
                   ></div>
-                </motion.div>
+                </div>
               </div>
             ))}
           </div>
@@ -184,10 +190,15 @@ export default function TechStackCarousel() {
   )
 }
 
-// Helper function to convert hex color to RGB
-function hexToRgb(hex) {
+// Improved helper function to convert hex color to RGBA
+interface HexToRgbaOptions {
+  hex: string;
+  alpha?: number;
+}
+
+function hexToRgba(hex: string, alpha: number = 1): string {
   // Default color if conversion fails
-  if (!hex || typeof hex !== 'string') return "0, 0, 0";
+  if (!hex || typeof hex !== 'string') return "rgba(0, 0, 0, " + alpha + ")";
   
   // Remove # if present
   hex = hex.replace('#', '');
@@ -197,10 +208,15 @@ function hexToRgb(hex) {
     hex = hex.split('').map(char => char + char).join('');
   }
   
-  // Convert hex to RGB
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  
-  return `${r}, ${g}, ${b}`;
+  try {
+    // Convert hex to RGB
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    
+    // Return RGBA string
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  } catch (e) {
+    return "rgba(0, 0, 0, " + alpha + ")";
+  }
 }

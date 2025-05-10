@@ -9,42 +9,32 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "Immersive E-commerce Platform",
+    title: "LegalEase",
     description:
-      "A full-featured e-commerce platform with 3D product visualization, AR try-on features, and seamless checkout experience. Built with Next.js, Three.js, and Stripe integration.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Three.js", "Stripe", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
-    completion: 100,
+      "LegalEase connects users with specialized lawyers and provides reliable legal information through an intuitive interface. Features include attorney matching, verified resources, and an AI-powered guidance system.",
+    image: "/legalease.png?height=400&width=600",
+    tags: ["TypeScript", "Next.js", "Node.js", "MongoDB"],
+    liveUrl: "https://legal-ease-xi.vercel.app/", // replace with actual if available
+    githubUrl: "https://github.com/yashvikram30/LegalEase", // replace with actual
+    completion: 80,
   },
   {
     id: 2,
-    title: "AI-Powered Content Platform",
+    title: "SAAS Landing Page",
     description:
-      "A platform that leverages AI to generate and curate personalized content for users. Features include content recommendation, smart summarization, and interactive learning paths.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "OpenAI", "MongoDB"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
-    completion: 85,
-  },
-  {
-    id: 3,
-    title: "Interactive Data Visualization Dashboard",
-    description:
-      "A comprehensive dashboard for visualizing complex datasets with interactive charts, filters, and real-time updates. Includes customizable views and export capabilities.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Vue.js", "D3.js", "Firebase", "SCSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
-    completion: 90,
+      "Modern, responsive landing page built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. Features smooth animations and a clean design – perfect for showcasing your SaaS product.",
+    image: "/saas.png?height=400&width=600",
+    tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://saas-landing-page-alpha-rust.vercel.app/", // replace with actual if available
+    githubUrl: "https://github.com/yashvikram30/saas-landing-page", // replace with actual
+    completion: 100,
   },
 ]
 
+
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-20 md:py-28">
+    <section id="projects" className="relative">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute right-[10%] top-[20%] h-[300px] w-[300px] rounded-full bg-primary/5 blur-[100px]" />
         <div className="absolute bottom-[10%] left-[5%] h-[250px] w-[250px] rounded-full bg-secondary/5 blur-[100px]" />
@@ -71,20 +61,31 @@ export default function Projects() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <a
+          {/* <a
             href="#"
             className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
           >
             View All Projects
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </a> */}
         </div>
       </div>
     </section>
   )
 }
 
-function ProjectCard({ project, index }) {
+interface Project {
+  id: number
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  liveUrl: string
+  githubUrl: string
+  completion: number
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef(null)
   const isInView = useInView(cardRef, { once: true, amount: 0.3 })
 

@@ -7,42 +7,16 @@ import { MapPin, ExternalLink } from "lucide-react"
 const experiences = [
   {
     id: 1,
-    role: "Senior Frontend Developer",
-    company: "TechVision Inc.",
-    duration: "2021 - Present",
-    location: "San Francisco, CA",
+    role: "Intern",
+    company: "Idevify Solutions",
+    duration: "Feb 2024 - April 2024",
+    location: "Remote",
     description: [
-      "Led the development of the company's flagship product using React and TypeScript",
-      "Implemented CI/CD pipelines that reduced deployment time by 40%",
-      "Mentored junior developers and conducted code reviews",
+      "Collaborated with teammates to build custom websites for clients, ensuring tailored solutions and timely delivery",
+      "Worked across the full stack, handling both frontend and backend tasks to develop scalable features",
+      "Improved UI components for better user experience and visual consistency",
     ],
-    companyUrl: "https://example.com",
-  },
-  {
-    id: 2,
-    role: "Full Stack Developer",
-    company: "Digital Solutions LLC",
-    duration: "2019 - 2021",
-    location: "New York, NY",
-    description: [
-      "Developed and maintained multiple client projects using the MERN stack",
-      "Optimized database queries resulting in a 30% performance improvement",
-      "Collaborated with design team to implement responsive UI components",
-    ],
-    companyUrl: "https://example.com",
-  },
-  {
-    id: 3,
-    role: "Frontend Developer",
-    company: "WebCraft Studios",
-    duration: "2017 - 2019",
-    location: "Austin, TX",
-    description: [
-      "Built interactive web applications using React and Redux",
-      "Implemented responsive designs and ensured cross-browser compatibility",
-      "Participated in agile development processes and sprint planning",
-    ],
-    companyUrl: "https://example.com",
+    companyUrl: "#",
   },
 ]
 
@@ -84,7 +58,17 @@ export default function Experience() {
   )
 }
 
-function TimelineItem({ experience, index, isInView }) {
+interface Experience {
+  id: number
+  role: string
+  company: string
+  duration: string
+  location: string
+  description: string[]
+  companyUrl: string
+}
+
+function TimelineItem({ experience, index, isInView }: { experience: Experience; index: number; isInView: boolean }) {
   const isEven = index % 2 === 0
 
   return (

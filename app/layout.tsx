@@ -17,8 +17,8 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Modern Portfolio",
-  description: "A modern portfolio website with unique card components",
+  title: "Yash Vikram",
+  description: "Welcome to the portfolio of Yash Vikram — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
     generator: 'v0.dev'
 }
 

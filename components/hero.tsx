@@ -65,7 +65,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
           >
-            I build modern, interactive fullstack applications with cutting-edge web technologies, distinctive designs, and robust blockchain integrations.
+            Hello, I'm Yash. I build modern, interactive fullstack applications with cutting-edge web technologies, distinctive designs, and robust blockchain integrations.
           </motion.p>
 
           <motion.div

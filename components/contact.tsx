@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,40 @@ import { Textarea } from "@/components/ui/textarea"
 export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
+  
+  // Moved state inside the component
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  // Moved event handlers inside the component
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Message sent!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      alert(data.error || "Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <section id="contact" ref={ref} className="relative py-20 md:py-28">
@@ -52,12 +86,12 @@ export default function Contact() {
                   <div>
                     <h4 className="text-sm font-medium text-muted-foreground">Email</h4>
                     <a href="mailto:hello@example.com" className="text-lg font-medium hover:text-primary">
-                      hello@example.com
+                      workwithyash30@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
                     <Phone className="h-5 w-5" />
                   </div>
@@ -67,7 +101,7 @@ export default function Contact() {
                       +1 (123) 456-7890
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
@@ -75,7 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-muted-foreground">Location</h4>
-                    <p className="text-lg font-medium">San Francisco, CA</p>
+                    <p className="text-lg font-medium">Nagpur, India</p>
                   </div>
                 </div>
               </div>
@@ -84,21 +118,21 @@ export default function Contact() {
                 <h4 className="mb-4 text-sm font-medium text-muted-foreground">Connect with me</h4>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://www.github.com/yashvikram30"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/yashvikram30/"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://x.com/yashvikram30"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="Twitter"
                   >
@@ -123,7 +157,7 @@ export default function Contact() {
 
               <h3 className="mb-6 font-space text-xl font-bold">Send Me a Message</h3>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
@@ -131,6 +165,8 @@ export default function Contact() {
                     </label>
                     <Input
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Your name"
                       className="border-foreground/10 bg-background/50 backdrop-blur-sm focus:border-primary"
                     />
@@ -141,6 +177,8 @@ export default function Contact() {
                     </label>
                     <Input
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       type="email"
                       placeholder="Your email"
                       className="border-foreground/10 bg-background/50 backdrop-blur-sm focus:border-primary"
@@ -154,6 +192,8 @@ export default function Contact() {
                   </label>
                   <Input
                     id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     placeholder="Subject"
                     className="border-foreground/10 bg-background/50 backdrop-blur-sm focus:border-primary"
                   />
@@ -165,15 +205,17 @@ export default function Contact() {
                   </label>
                   <Textarea
                     id="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Your message"
                     rows={5}
                     className="border-foreground/10 bg-background/50 backdrop-blur-sm focus:border-primary"
                   />
                 </div>
 
-                <Button className="group relative inline-flex h-12 overflow-hidden rounded-full bg-gradient-to-r from-primary to-secondary p-[1px] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                <Button type="submit" className="group relative inline-flex h-12 overflow-hidden rounded-full bg-gradient-to-r from-primary to-secondary p-[1px] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-background px-8 py-1 text-sm font-medium backdrop-blur-3xl">
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-background px-8 py-1 text-sm font-medium text-foreground dark:text-foreground backdrop-blur-3xl">
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </span>

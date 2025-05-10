@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-20 md:py-28">
+    <section id="contact" ref={ref} className="relative">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[5%] top-[10%] h-[300px] w-[300px] rounded-full bg-primary/5 blur-[100px]" />
         <div className="absolute bottom-[10%] right-[10%] h-[250px] w-[250px] rounded-full bg-secondary/5 blur-[100px]" />

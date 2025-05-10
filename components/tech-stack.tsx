@@ -151,19 +151,16 @@ export default function TechStackCarousel() {
                   >
                     {/* SVG icon from public folder */}
                     <div 
-                      className="flex aspect-square w-full items-center justify-center rounded-md transition-all duration-300"
-                      style={{ 
-                        background: `linear-gradient(135deg, ${hexToRgba(tech.color, 0.2)}, ${hexToRgba(tech.color, 0.05)})` 
-                      }}
-                    >
-                      <Image
-                        src={tech.icon}
-                        alt={tech.name}
-                        width={40}
-                        height={40}
-                        className="h-30 w-30 object-contain"
-                      />
-                    </div>
+  className="flex aspect-square w-full items-center justify-center rounded-md transition-all duration-300 bg-white dark:bg-white/90"
+>
+  <Image
+    src={tech.icon}
+    alt={tech.name}
+    width={40}
+    height={40}
+    className="h-30 w-30 object-contain"
+  />
+</div>
                   </div>
                   
                   {/* Tooltip on hover */}

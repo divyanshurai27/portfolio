@@ -19,14 +19,14 @@ const notesPreviews = [
     title: "System Architecture Patterns",
     image: "/placeholder.svg?height=120&width=200&text=Architecture+Patterns",
     description: "Visual diagrams and explanations of common system architecture patterns.",
-    url: "https://notes.example.com/architecture-patterns"
+    url: "#"
   },
   {
     id: 3,
     title: "Algorithm Visualizations",
     image: "/placeholder.svg?height=120&width=200&text=Algorithms",
     description: "Step-by-step visualizations of complex algorithms with time/space complexity analysis.",
-    url: "https://notes.example.com/algorithms"
+    url: "#"
   },
 ]
 

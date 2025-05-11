@@ -1,35 +1,41 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, Space_Grotesk } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
-import "@/app/globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import "@/app/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-})
+});
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
-})
+});
 
 export const metadata: Metadata = {
   title: "Yash Vikram",
-  description: "Welcome to the portfolio of Yash Vikram — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
-    generator: 'v0.dev'
-}
+  description:
+    "Welcome to the portfolio of Yash Vikram — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
+  generator: "v0.dev",
+  icons: {
+    icon: '/Yash.png', // or '/favicon.png'
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen flex-col bg-gradient-to-b from-background to-background/95 dark:from-background dark:to-background/95">
             <Navigation />
@@ -39,5 +45,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

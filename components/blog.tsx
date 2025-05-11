@@ -8,39 +8,15 @@ import { Calendar, Clock, ArrowRight, Tag } from "lucide-react"
 const blogPosts = [
   {
     id: 1,
-    title: "Designing for the Future: Trends to Watch in 2023",
+    title: "Generics, Lifetimes and Traits in Rust",
     excerpt:
-      "Explore the emerging design trends that will shape the digital landscape in the coming year, from glassmorphism to neumorphism and beyond.",
+      "Ever wondered how Rust achieves both flexibility AND safety? Let's break down three powerful features that make Rust uniquely powerful: generics, lifetimes, and traits.",
     date: "April 18, 2025",
     readTime: "8 min read",
-    image: "/placeholder.svg?height=150&width=300",
-    category: "Design",
+    image: "/rust.jpg?height=150&width=300",
+    category: "Web3",
     tags: ["Thread", "Rust", "Blockchain"],
     url: "https://x.com/yashvikram30/status/1913172505126195337",
-  },
-  {
-    id: 2,
-    title: "The Evolution of JavaScript Frameworks",
-    excerpt:
-      "A deep dive into how JavaScript frameworks have evolved over the years and what the future holds for web development.",
-    date: "April 22, 2023",
-    readTime: "12 min read",
-    image: "/placeholder.svg?height=150&width=300",
-    category: "Development",
-    tags: ["JavaScript", "Frameworks", "Web Development"],
-    url: "#",
-  },
-  {
-    id: 3,
-    title: "Optimizing Performance in React Applications",
-    excerpt:
-      "Learn practical techniques to improve the performance of your React applications, from code splitting to memoization.",
-    date: "March 10, 2023",
-    readTime: "10 min read",
-    image: "/placeholder.svg?height=150&width=300",
-    category: "Performance",
-    tags: ["React", "Optimization", "Web Performance"],
-    url: "#",
   },
 ]
 
@@ -92,7 +68,7 @@ function BlogCard({ post, index, isInView }) {
       <div className="relative z-10 overflow-hidden rounded-lg border border-foreground/10 bg-background/50 backdrop-blur-sm transition-all duration-300 group-hover:border-foreground/20 group-hover:shadow-[0_0_20px_4px_rgba(var(--primary-rgb),0.1)]">
         <div className="flex flex-col lg:flex-row">
           {/* Left side - Image */}
-          <div className="relative lg:w-1/4">
+          <div className="relative lg:w-1/6">
             <div className="aspect-[16/9] lg:aspect-auto lg:h-full">
               <Image
                 src={post.image || "/placeholder.svg"}
@@ -126,11 +102,11 @@ function BlogCard({ post, index, isInView }) {
                 </div>
               </div>
 
-              <h3 className="mb-1.5 font-space text-md font-bold transition-colors group-hover:text-primary md:text-base">
+              <h3 className="mb-1.5 font-space text-md font-bold transition-colors group-hover:text-primary md:text-lg">
                 {post.title}
               </h3>
 
-              <p className="mb-2 text-xs text-muted-foreground line-clamp-2 leading-tight">{post.excerpt}</p>
+              <p className="mb-2 text-sm text-muted-foreground line-clamp-2 leading-tight">{post.excerpt}</p>
 
               <div className="mb-3 flex flex-wrap gap-1">
                 {post.tags.map((tag) => (
@@ -143,7 +119,7 @@ function BlogCard({ post, index, isInView }) {
             </div>
 
             <div className="flex justify-between items-center">
-              <a href={post.url} onClick={(e) => e.stopPropagation()} className="group/button inline-flex items-center gap-1 text-xs font-medium text-primary">
+              <a href={post.url} onClick={(e) => e.stopPropagation()} className="group/button inline-flex items-center gap-1 text-md font-medium text-primary">
                 Read Article
                 <span className="transition-transform duration-300 group-hover/button:translate-x-1">→</span>
               </a>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ModeToggle } from "@/components/ui/mode-toggle"
@@ -36,9 +37,14 @@ export default function Navigation() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#hero" className="group relative z-10 flex items-center">
           <span className="relative font-space text-xl font-bold tracking-tighter">
-            <span className="relative z-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              PORTFOLIO
-            </span>
+          <Image
+  src="/Yash.png"
+  alt="Yash"
+  width={50} // or 32
+  height={50} // or 32
+  className="w-10 h-10 object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+/>
+
             <span className="absolute -bottom-0.5 left-0 h-[6px] w-0 bg-gradient-to-r from-primary to-secondary opacity-70 transition-all duration-300 group-hover:w-full"></span>
           </span>
         </Link>

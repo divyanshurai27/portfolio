@@ -16,10 +16,10 @@ const notesPreviews = [
   },
   {
     id: 2,
-    title: "System Architecture Patterns",
-    image: "/placeholder.svg?height=120&width=200&text=Architecture+Patterns",
-    description: "Visual diagrams and explanations of common system architecture patterns.",
-    url: "#"
+    title: "Operating Systems",
+    image: "/os.png?height=120&width=200&text=Architecture+Patterns",
+    description: "Various algorithms, diagrams and explanations related to Operating Systems",
+    url: "https://yashvikram5.gumroad.com/l/rrazon"
   },
   {
     id: 3,
@@ -78,14 +78,14 @@ export default function Notes() {
           <div className="absolute -bottom-4 -right-4 h-20 w-20 rounded-full border border-secondary/20"></div>
 
           <div className="relative z-10">
-            <div className="mb-8 flex items-center justify-center">
+            {/* <div className="mb-8 flex items-center justify-center">
               <BookOpen className="mr-2 h-6 w-6 text-primary" />
               <h3 className="font-space text-xl font-medium">Why I Create These Notes</h3>
             </div>
 
             <p className="mx-auto mb-8 max-w-3xl text-center text-muted-foreground">
             These handwritten notes are my way of breaking down complex topics into digestible, visual explanations. The notes are especially useful for both college students and professionals, as they are based on core computer science subjects as well as data science fundamentals. I'm sharing them in hopes they might help others on their learning journey.
-            </p>
+            </p> */}
 
             <div className="grid gap-8 md:grid-cols-3">
               {notesPreviews.map((note, index) => (

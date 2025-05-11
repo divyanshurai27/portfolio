@@ -38,7 +38,7 @@ export default function Blog() {
               INSIGHTS & THOUGHTS
             </span>
           </div>
-          <h2 className="mb-2 font-space text-5xl font-bold tracking-tight sm:text-3xl md:text-5xl">From The Blog</h2>
+          <h2 className="mb-2 font-space font-bold tracking-tight text-3xl md:text-5xl">From The Blog</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Articles and insights about design, development, and the latest trends in the tech industry.
           </p>

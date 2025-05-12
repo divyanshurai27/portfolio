@@ -23,10 +23,10 @@ const notesPreviews = [
   },
   {
     id: 3,
-    title: "Algorithm Visualizations",
-    image: "/placeholder.svg?height=120&width=200&text=Algorithms",
-    description: "Step-by-step visualizations of complex algorithms with time/space complexity analysis.",
-    url: "#"
+    title: "Compiler Design",
+    image: "/cd.png?height=120&width=200&text=Algorithms",
+    description: "Step-by-step, basic to advanced numericals based on parsers.",
+    url: "https://yashvikram5.gumroad.com/l/wvosl"
   },
 ]
 
@@ -108,7 +108,7 @@ export default function Notes() {
                     />
 
                     {/* Notebook binding effect */}
-                    <div className="absolute left-0 top-0 h-full w-[10px] bg-gradient-to-r from-primary/30 to-transparent"></div>
+                    {/* <div className="absolute left-0 top-0 h-full w-[10px] bg-gradient-to-r from-primary/30 to-transparent"></div> */}
 
                     {/* Paper holes */}
                     <div className="absolute left-[5px] top-[15%] h-[10px] w-[10px] translate-x-[-50%] rounded-full bg-background/80"></div>

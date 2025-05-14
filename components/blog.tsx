@@ -18,6 +18,18 @@ const blogPosts = [
     tags: ["Thread", "Rust", "Blockchain"],
     url: "https://x.com/yashvikram30/status/1913172505126195337",
   },
+  {
+    id: 2,
+    title: "Cryptography and Blockchain",
+    excerpt:
+      "Learn and understand the basics of cryptography, keypairs and various algorithms.",
+    date: "April 18, 2025",
+    readTime: "8 min read",
+    image: "/c&b.webp?height=150&width=300",
+    category: "Cryptography",
+    tags: ["Thread", "Rust", "Blockchain"],
+    url: "https://medium.com/@yashvikram8250/cryptography-and-blockchain-454c0e77a521",
+  },
 ]
 
 export default function Blog() {
@@ -91,7 +103,7 @@ function BlogCard({ post, index, isInView }) {
           {/* Right side - Content */}
           <div className="flex flex-col justify-between p-4 lg:w-3/4">
             <div>
-              <div className="mb-2 flex items-center gap-3 text-xs text-muted-foreground">
+              {/* <div className="mb-2 flex items-center gap-3 text-xs text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Calendar className="h-3 w-3" />
                   <span>{post.date}</span>
@@ -100,7 +112,7 @@ function BlogCard({ post, index, isInView }) {
                   <Clock className="h-3 w-3" />
                   <span>{post.readTime}</span>
                 </div>
-              </div>
+              </div> */}
 
               <h3 className="mb-1.5 font-space text-md font-bold transition-colors group-hover:text-primary md:text-lg">
                 {post.title}
@@ -108,18 +120,18 @@ function BlogCard({ post, index, isInView }) {
 
               <p className="mb-2 text-sm text-muted-foreground line-clamp-2 leading-tight">{post.excerpt}</p>
 
-              <div className="mb-3 flex flex-wrap gap-1">
+              {/* <div className="mb-3 flex flex-wrap gap-1">
                 {post.tags.map((tag) => (
                   <div key={tag} className="flex items-center gap-1 rounded-full bg-muted/50 px-2 py-0.5 text-xs">
                     <Tag className="h-2 w-2" />
                     <span className="text-xs">{tag}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
-            <div className="flex justify-between items-center">
-              <a href={post.url} onClick={(e) => e.stopPropagation()} className="group/button inline-flex items-center gap-1 text-md font-medium text-primary">
+            <div className="flex justify-between items-center mt-6">
+              <a href={post.url} onClick={(e) => e.stopPropagation()} className="group/button inline-flex items-center gap-1 text-sm md:text-md font-medium text-primary">
                 Read Article
                 <span className="transition-transform duration-300 group-hover/button:translate-x-1">→</span>
               </a>

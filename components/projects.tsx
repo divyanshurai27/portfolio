@@ -47,11 +47,11 @@ export default function Projects() {
               FEATURED WORK
             </span>
           </div>
-          <h2 className="mb-4 font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Recent Projects</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <h2 className="font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Recent Projects</h2>
+          {/* <p className="mx-auto max-w-2xl text-muted-foreground">
             Explore my latest work showcasing modern design and development techniques. Each project represents a unique
             challenge and solution.
-          </p>
+          </p> */}
         </div>
 
         <div className="space-y-24">

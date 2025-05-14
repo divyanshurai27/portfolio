@@ -38,11 +38,11 @@ export default function Experience() {
               PROFESSIONAL JOURNEY
             </span>
           </div>
-          <h2 className="mb-4 font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Work Experience</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <h2 className="font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Work Experience</h2>
+          {/* <p className="mx-auto max-w-2xl text-muted-foreground">
             My professional journey through various roles and companies, showcasing my growth and expertise in the
             field.
-          </p>
+          </p> */}
         </div>
 
         <div className="relative mx-auto max-w-4xl">

@@ -54,13 +54,13 @@ export default function Notes() {
               KNOWLEDGE SHARING
             </span>
           </div>
-          <h2 className="mb-4 font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="font-space text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             My Handwritten Notes
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          {/* <p className="mx-auto max-w-2xl text-muted-foreground">
             I create detailed handwritten notes to visualize complex concepts and share knowledge. These notes combine
             visual diagrams, code snippets, and explanations to make learning more intuitive.
-          </p>
+          </p> */}
         </div>
 
         {/* Notes preview section */}

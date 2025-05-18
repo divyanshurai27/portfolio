@@ -22,12 +22,27 @@ const notesPreviews = [
     url: "https://yashvikram5.gumroad.com/l/rrazon"
   },
   {
+    id: 4,
+    title: "Theory of Computation",
+    image: "/toc.png?height=120&width=200&text=Algorithms",
+    description: "Extremely detailed and easy to understand notes, covering basics to advanced topics",
+    url: "https://yashvikram5.gumroad.com/l/ctalhx"
+  },
+  {
+    id: 5,
+    title: "Design and Analysis of Algorithms",
+    image: "/daa.png?height=120&width=200&text=Algorithms",
+    description: "Dive deep into various algorithms used across the field of Computer Science!",
+    url: "https://yashvikram5.gumroad.com/l/xcfcgx"
+  },
+  {
     id: 3,
     title: "Compiler Design",
     image: "/cd.png?height=120&width=200&text=Algorithms",
     description: "Step-by-step, basic to advanced numericals based on parsers.",
     url: "https://yashvikram5.gumroad.com/l/wvosl"
   },
+  
 ]
 
 export default function Notes() {

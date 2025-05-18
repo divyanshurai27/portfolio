@@ -49,14 +49,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 font-space text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Creating{" "}
+            Hello, I'm{" "}
             <span className="relative">
               <span className="relative z-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                digital experiences
+                Yash <br/>
               </span>
               <span className="absolute -bottom-2 left-0 z-0 h-3 w-full bg-gradient-to-r from-primary/40 to-secondary/40 blur-sm"></span>
             </span>{" "}
-            that inspire
           </motion.h1>
 
           <motion.p
@@ -65,7 +64,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
           >
-            Hello, I'm Yash. I build modern, interactive fullstack applications with cutting-edge web technologies, distinctive designs, and robust blockchain integrations.
+            Proficient in development, technical writing and building full-stack projects.
           </motion.p>
 
           <motion.div

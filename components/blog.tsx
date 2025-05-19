@@ -22,13 +22,25 @@ const blogPosts = [
     id: 2,
     title: "Cryptography and Blockchain",
     excerpt:
-      "Learn and understand the basics of cryptography, keypairs and various algorithms.",
+      "Cryptography and blockchain go hand in hand. In this article, we will understand the basics of cryptography, and how things work in the modern context.",
     date: "April 18, 2025",
     readTime: "8 min read",
     image: "/c&b.webp?height=150&width=300",
     category: "Cryptography",
     tags: ["Thread", "Rust", "Blockchain"],
     url: "https://medium.com/@yashvikram8250/cryptography-and-blockchain-454c0e77a521",
+  },
+  {
+    id: 3,
+    title: "Solana 101: An Intro",
+    excerpt:
+      "In recent times, the term “Solana” is a topic of intriguing discussion in the developer community. It has sparked interest, gathered excitement, and got everyone on their heels. But, what even is Solana?",
+    date: "April 18, 2025",
+    readTime: "8 min read",
+    image: "art3.webp?height=150&width=300",
+    category: "Solana",
+    tags: ["Article", "Solana", "Blockchain"],
+    url: "https://medium.com/@yashvikram8250/solana-101-an-intro-afa8be153b18",
   },
 ]
 

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import "@/app/globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Welcome to the portfolio of Yash Vikram — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
   generator: "v0.dev",
   icons: {
-    icon: '/Yash.png', // or '/favicon.png'
+    icon: "/Yash.png", // or '/favicon.png'
   },
 };
 
@@ -40,7 +40,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen flex-col bg-gradient-to-b from-background to-background/95 dark:from-background dark:to-background/95">
             <Navigation />
-            <div className="flex-1">{children}</div>
+            <div className="flex-1">
+              {children}
+              <Analytics />
+            </div>
             <Footer />
           </div>
         </ThemeProvider>

@@ -20,11 +20,11 @@ export default function Contact() {
   });
 
   // Moved event handlers inside the component
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
 
     const res = await fetch("/api/contact", {
@@ -86,7 +86,7 @@ export default function Contact() {
                   <div>
                     <h4 className="text-sm font-medium text-muted-foreground">Email</h4>
                     <a href="mailto:hello@example.com" className="text-lg font-medium hover:text-primary">
-                      workwithyash30@gmail.com
+                      raidivyanshu133@gmail.com
                     </a>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-muted-foreground">Location</h4>
-                    <p className="text-lg font-medium">Nagpur, India</p>
+                    <p className="text-lg font-medium">Bengaluru, India</p>
                   </div>
                 </div>
               </div>
@@ -118,21 +118,21 @@ export default function Contact() {
                 <h4 className="mb-4 text-sm font-medium text-muted-foreground">Connect with me</h4>
                 <div className="flex gap-4">
                   <a
-                    href="https://www.github.com/yashvikram30"
+                    href="https://www.github.com/raidivyanshu27"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/yashvikram30/"
+                    href="https://www.linkedin.com/in/divyanshurai27/"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://x.com/yashvikram30"
+                    href="https://x.com/rai_divyanshu"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                     aria-label="Twitter"
                   >

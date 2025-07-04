@@ -78,7 +78,7 @@ export default function Blog() {
   )
 }
 
-function BlogCard({ post, index, isInView }) {
+function BlogCard({ post, index, isInView }:any) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}

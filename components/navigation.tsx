@@ -38,8 +38,8 @@ export default function Navigation() {
         <Link href="#hero" className="group relative z-10 flex items-center">
           <span className="relative font-space text-xl font-bold tracking-tighter">
           <Image
-  src="/Yash.png"
-  alt="Yash"
+  src="/dr7.png"
+  alt="Divyanshu"
   width={50} // or 32
   height={50} // or 32
   className="w-10 h-10 object-cover rounded-full transition-transform duration-500 group-hover:scale-110"

@@ -39,7 +39,7 @@ export default function Hero() {
             className="mb-6 inline-block rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 px-6 py-2 backdrop-blur-sm"
           >
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Full-Stack & Blockchain Developer
+              Full-Stack Developer 
             </span>
           </motion.div>
 
@@ -52,7 +52,7 @@ export default function Hero() {
             Hello, I'm{" "}
             <span className="relative">
               <span className="relative z-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Yash <br/>
+                Divyanshu <br/>
               </span>
               <span className="absolute -bottom-2 left-0 z-0 h-3 w-full bg-gradient-to-r from-primary/40 to-secondary/40 blur-sm"></span>
             </span>{" "}

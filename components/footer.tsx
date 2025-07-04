@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-2 md:items-start">
             <Link href="#hero" className="font-space text-xl font-bold tracking-tighter">
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Yash Vikram
+                Divyanshu Rai
               </span>
             </Link>
             <p className="text-center text-sm text-muted-foreground md:text-left">
@@ -22,28 +22,28 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4 md:items-end">
             <div className="flex gap-4">
               <a
-                href="https://www.github.com/yashvikram30"
+                href="https://www.github.com/divyanshurai27"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/yashvikram30/"
+                href="https://www.linkedin.com/in/divyanshurai27/"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://www.x.com/yashvikram30"
+                href="https://www.x.com/rai_divyanshu27"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="mailto:workwithyash30@gmail.com"
+                href="mailto:raidivyanshu133@gmail.com"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 transition-colors hover:border-foreground/30 hover:text-primary"
                 aria-label="Email"
               >

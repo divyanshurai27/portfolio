@@ -9,17 +9,17 @@ export function SocialLinks({ className }: SocialLinksProps) {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/username",
+      url: "https://github.com/divyanshurai27",
       icon: <Github className="h-5 w-5" />,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/username",
+      url: "www.linkedin.com/in/divyanshurai27",
       icon: <Linkedin className="h-5 w-5" />,
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/username",
+      url: "https://twitter.com/rai_divyanshu27",
       icon: <Twitter className="h-5 w-5" />,
     },
     {

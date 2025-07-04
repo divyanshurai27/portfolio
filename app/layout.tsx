@@ -18,12 +18,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Yash Vikram",
+  title: "Divyanshu Rai",
   description:
-    "Welcome to the portfolio of Yash Vikram — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
+    "Welcome to the portfolio of Divyanshu Rai — a passionate full-stack & blockchain developer with a flair for building scalable web applications, solving complex problems, and crafting clean user experiences.",
   generator: "v0.dev",
   icons: {
-    icon: "/Yash.png", // or '/favicon.png'
+    icon: "/dr7.png", // or '/favicon.png'
   },
 };
 

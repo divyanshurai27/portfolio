@@ -11,7 +11,7 @@ const projects = [
     id: 1,
     title: "ReDiFy",
     description:
-      "LegalEase connects users with specialized lawyers and provides reliable legal information through an intuitive interface. Features include attorney matching, verified resources, and an AI-powered guidance system.",
+      "ReDiFy is a modern online bookstore platform designed for readers who love discovering meaningful books. It offers a clean and user-friendly interface where users can explore curated collections, browse categories, and access both free and premium books. The platform focuses on simplicity, smooth navigation, and an enjoyable reading discovery experience. Built using modern web technologies, BookStore provides responsive design, dark/light theme support, and an engaging UI that brings the joy of books to the digital world.",
     image: "redify.png?height=400&width=600",
     tags: ["React", "Next.js", "Node.js"],
     liveUrl: "https://bookstore-wlv3.vercel.app/", // replace with actual if available

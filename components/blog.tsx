@@ -8,39 +8,35 @@ import { Calendar, Clock, ArrowRight, Tag } from "lucide-react"
 const blogPosts = [
   {
     id: 1,
-    title: "Generics, Lifetimes and Traits in Rust",
-    excerpt:
-      "Ever wondered how Rust achieves both flexibility AND safety? Let's break down three powerful features that make Rust uniquely powerful: generics, lifetimes, and traits.",
-    date: "April 18, 2025",
+    title: "Bengaluru summit",
+   
+     
     readTime: "8 min read",
-    image: "/rust.jpg?height=150&width=300",
-    category: "Web3",
-    tags: ["Thread", "Rust", "Blockchain"],
-    url: "https://x.com/yashvikram30/status/1913172505126195337",
+    image: "/summit.png?height=150&width=300",
+    
+    url: "https://x.com/rai_divyanshu27/status/1991042497133650408",
   },
   {
     id: 2,
-    title: "Cryptography and Blockchain",
-    excerpt:
-      "Cryptography and blockchain go hand in hand. In this article, we will understand the basics of cryptography, and how things work in the modern context.",
+    title: "upgarde",
+   
     date: "April 18, 2025",
     readTime: "8 min read",
-    image: "/c&b.webp?height=150&width=300",
-    category: "Cryptography",
-    tags: ["Thread", "Rust", "Blockchain"],
-    url: "https://medium.com/@yashvikram8250/cryptography-and-blockchain-454c0e77a521",
+    image: "tanjiro.png?height=150&width=300",
+
+   
+    url: "https://x.com/rai_divyanshu27/status/1946045688179040485",
   },
   {
     id: 3,
-    title: "Solana 101: An Intro",
-    excerpt:
-      "In recent times, the term “Solana” is a topic of intriguing discussion in the developer community. It has sparked interest, gathered excitement, and got everyone on their heels. But, what even is Solana?",
-    date: "April 18, 2025",
+    title: "feels like",
+ 
+     
     readTime: "8 min read",
-    image: "art3.webp?height=150&width=300",
-    category: "Solana",
-    tags: ["Article", "Solana", "Blockchain"],
-    url: "https://medium.com/@yashvikram8250/solana-101-an-intro-afa8be153b18",
+    image: "some.png?height=150&width=300",
+   
+    
+    url: "https://x.com/rai_divyanshu27/status/1960061857223647291",
   },
 ]
 

@@ -9,26 +9,16 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "LegalEase",
+    title: "ReDiFy",
     description:
       "LegalEase connects users with specialized lawyers and provides reliable legal information through an intuitive interface. Features include attorney matching, verified resources, and an AI-powered guidance system.",
-    image: "/legalease.png?height=400&width=600",
-    tags: ["TypeScript", "Next.js", "Node.js", "MongoDB"],
-    liveUrl: "https://legal-ease-xi.vercel.app/", // replace with actual if available
-    githubUrl: "https://github.com/yashvikram30/LegalEase", // replace with actual
+    image: "redify.png?height=400&width=600",
+    tags: ["React", "Next.js", "Node.js"],
+    liveUrl: "https://bookstore-wlv3.vercel.app/", // replace with actual if available
+    githubUrl: "https://github.com/divyanshurai27/Bookstore/tree/main/frontend", // replace with actual
     completion: 80,
-  },
-  {
-    id: 2,
-    title: "SAAS Landing Page",
-    description:
-      "Modern, responsive landing page built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. Features smooth animations and a clean design – perfect for showcasing your SaaS product.",
-    image: "/saas.png?height=400&width=600",
-    tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://saas-landing-page-alpha-rust.vercel.app/", // replace with actual if available
-    githubUrl: "https://github.com/yashvikram30/saas-landing-page", // replace with actual
-    completion: 100,
-  },
+  }
+  
 ]
 
 

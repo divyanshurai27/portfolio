@@ -1,4 +1,4 @@
-"use client"
+  {/*  "use client"
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
@@ -43,12 +43,14 @@ export default function Experience() {
             My professional journey through various roles and companies, showcasing my growth and expertise in the
             field.
           </p> */}
+
+          {/*
         </div>
 
         <div className="relative mx-auto max-w-4xl">
           {/* Timeline line */}
-          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-primary/50 via-foreground/10 to-secondary/50 md:left-1/2 md:-ml-px"></div>
-
+           {/* <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-primary/50 via-foreground/10 to-secondary/50 md:left-1/2 md:-ml-px"></div>
+  {/*
           {experiences.map((experience, index) => (
             <TimelineItem key={experience.id} experience={experience} index={index} isInView={isInView} />
           ))}
@@ -80,16 +82,16 @@ function TimelineItem({ experience, index, isInView }: { experience: Experience;
         className={`relative mb-12 flex md:mb-24 ${isEven ? "md:flex-row-reverse" : "md:flex-row"}`}
       >
         {/* Timeline dot */}
-        <div className="absolute left-0 top-0 flex h-6 w-6 -translate-x-1/2 transform items-center justify-center md:left-1/2">
+        {/*  <div className="absolute left-0 top-0 flex h-6 w-6 -translate-x-1/2 transform items-center justify-center md:left-1/2">
           <span className="h-3 w-3 rounded-full bg-gradient-to-r from-primary to-secondary"></span>
           <span className="absolute h-6 w-6 animate-ping rounded-full bg-primary/30"></span>
         </div>
 
         {/* Content */}
-        <div className={`ml-8 md:ml-0 md:w-1/2 ${isEven ? "md:pr-16" : "md:pl-16"}`}>
+       {/*   <div className={`ml-8 md:ml-0 md:w-1/2 ${isEven ? "md:pr-16" : "md:pl-16"}`}>
           <div className="group relative overflow-hidden rounded-xl border border-foreground/10 bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-foreground/20 hover:shadow-[0_0_30px_4px_rgba(var(--primary-rgb),0.1)]">
             {/* Background gradient on hover */}
-            <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-xl bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 lg:block"></div>
+         {/*     <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-xl bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 lg:block"></div>
 
             <div className="relative z-10">
               <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
@@ -129,7 +131,7 @@ function TimelineItem({ experience, index, isInView }: { experience: Experience;
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -bottom-2 -right-2 h-12 w-12 rounded-full border border-primary/10"></div>
+           {/*   <div className="absolute -bottom-2 -right-2 h-12 w-12 rounded-full border border-primary/10"></div>
             <div className="absolute -left-2 -top-2 h-8 w-8 rounded-full border border-secondary/10"></div>
           </div>
         </div>
@@ -137,3 +139,5 @@ function TimelineItem({ experience, index, isInView }: { experience: Experience;
     </div>
   )
 }
+
+*/}
